@@ -2,7 +2,7 @@ backend:
   name: github
   repo: franciscojoseortegaarjona-png/prueba-visual-code
   branch: main
-  base_url: https://geenius-cms-oauth.TU-CUENTA.workers.dev
+  base_url: https://geenius-cms-oauth.cuentageenius.workers.dev
 
 locale: es
 publish_mode: simple
