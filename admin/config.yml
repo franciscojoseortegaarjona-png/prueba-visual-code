@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: franciscojoseortegaarjona-png/prueba-visual-code
+  branch: main
+  base_url: https://geenius-cms-oauth.TU-CUENTA.workers.dev
+
+locale: es
+publish_mode: simple
+media_folder: images/novedades
+public_folder: /images/novedades
+site_url: https://asociaciongeenius.es
+display_url: https://asociaciongeenius.es
+
+collections:
+  - name: actividades
+    label: Actividades
+    description: Novedades que aparecen en la web de GEENIUS.
+    files:
+      - name: novedades
+        label: Novedades
+        file: data/novedades.json
+        fields:
+          - label: Lista de actividades
+            name: actividades
+            widget: list
+            label_singular: actividad
+            summary: "{{fields.tipo}} · {{fields.titulo}}"
+            fields:
+              - { label: Título, name: titulo, widget: string }
+              - { label: Fecha, name: fecha, widget: date, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY" }
+              - label: Tipo
+                name: tipo
+                widget: select
+                options:
+                  - { label: Próxima, value: proxima }
+                  - { label: Realizada, value: realizada }
+                default: proxima
+              - { label: Texto, name: descripcion, widget: text, required: false }
+              - { label: Fotografía, name: foto, widget: image, required: false }
