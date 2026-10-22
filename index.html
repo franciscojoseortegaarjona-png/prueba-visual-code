@@ -663,7 +663,7 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
       const status = document.getElementById('news-status');
       const grid = document.getElementById('news-grid');
       try {
-        const response = await fetch('noticias.json', { cache: 'no-store' });
+        const newsUrl = new URL('https://raw.githubusercontent.com/franciscojoseortegaarjona-png/prueba-visual-code/main/noticias.json');         newsUrl.searchParams.set('updated', Date.now().toString());         const response = await fetch(newsUrl, { cache: 'no-store' });
         if (!response.ok) throw new Error(`No se pudo cargar noticias.json (${response.status})`);
         const data = await response.json();
         const noticias = Array.isArray(data.noticias) ? data.noticias : [];
