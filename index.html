@@ -636,7 +636,7 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
         p.textContent = a.descripcion;
         cuerpo.append(p);
       }
-      tarjeta.append(cuerpo);
+      if (a.inscripcion) { try { const enlace = new URL(a.inscripcion); if (enlace.protocol === 'https:') { const boton = document.createElement('a'); boton.className = 'btn btn-primary'; boton.href = enlace.href; boton.target = '_blank'; boton.rel = 'noopener noreferrer'; boton.textContent = 'Inscribirse'; boton.style.marginTop = '1rem'; cuerpo.append(boton); } } catch (e) { /* URL inválida: sin botón */ } } tarjeta.append(cuerpo);
       return tarjeta;
     }
     cargarNovedades();
