@@ -37,3 +37,4 @@ collections:
                 default: proxima
               - { label: Texto, name: descripcion, widget: text, required: false }
               - { label: Fotografía, name: foto, widget: image, required: false }
+              - { label: Enlace de inscripción, name: inscripcion, widget: string, required: false, hint: "Pega la URL completa (https://...). Si lo dejas vacío no aparece botón." }
