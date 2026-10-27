@@ -1,0 +1,88 @@
+{
+  "slides": [
+    {
+      "titulo": "Calendario GEENIUS 2026/27",
+      "fecha": "Curso 2026/27",
+      "imagen": "/1.jpg",
+      "miniatura": "/thumbs/1.jpg"
+    },
+    {
+      "titulo": "Entrevistas de inscripción",
+      "fecha": "23-25 septiembre 2026",
+      "imagen": "/2.jpg",
+      "miniatura": "/thumbs/2.jpg"
+    },
+    {
+      "titulo": "Visita a las cubiertas de la ETSI",
+      "fecha": "Octubre 2026",
+      "imagen": "/3.jpg",
+      "miniatura": "/thumbs/3.jpg"
+    },
+    {
+      "titulo": "Visita al INTA-CEDEA",
+      "fecha": "6 noviembre 2026",
+      "imagen": "/4.jpg",
+      "miniatura": "/thumbs/4.jpg"
+    },
+    {
+      "titulo": "Taller de tolerancia a la frustración",
+      "fecha": "12 noviembre 2026",
+      "imagen": "/5.jpg",
+      "miniatura": "/thumbs/5.jpg"
+    },
+    {
+      "titulo": "Charla sobre el Apagón de abril 2025",
+      "fecha": "Noviembre 2026",
+      "imagen": "/6.jpg",
+      "miniatura": "/thumbs/6.jpg"
+    },
+    {
+      "titulo": "Charla sobre el Hidrógeno",
+      "fecha": "26 noviembre 2026",
+      "imagen": "/7.jpg",
+      "miniatura": "/thumbs/7.jpg"
+    },
+    {
+      "titulo": "Visita a la Central Nuclear de Almaraz",
+      "fecha": "Enero 2027",
+      "imagen": "/8.jpg",
+      "miniatura": "/thumbs/8.jpg"
+    },
+    {
+      "titulo": "Conferencia sobre los CAE",
+      "fecha": "Febrero 2027",
+      "imagen": "/9.jpg",
+      "miniatura": "/thumbs/9.jpg"
+    },
+    {
+      "titulo": "Charla de orientación con egresados de G.I.E.",
+      "fecha": "Marzo 2027",
+      "imagen": "/10.jpg",
+      "miniatura": "/thumbs/10.jpg"
+    },
+    {
+      "titulo": "Visita a la Refinería de Huelva",
+      "fecha": "Fecha por determinar",
+      "imagen": "/11.jpg",
+      "miniatura": "/thumbs/11.jpg"
+    },
+    {
+      "titulo": "Visita a instalación FV",
+      "fecha": "Fecha por determinar",
+      "imagen": "/12.jpg",
+      "miniatura": "/thumbs/12.jpg"
+    },
+    {
+      "titulo": "Charla sobre Subestaciones Eléctricas",
+      "fecha": "Fecha por determinar",
+      "imagen": "/13.jpg",
+      "miniatura": "/thumbs/13.jpg"
+    },
+    {
+      "titulo": "Charla sobre Energía y Centros de Datos",
+      "fecha": "Fecha por determinar",
+      "imagen": "/14.jpg",
+      "miniatura": "/thumbs/14.jpg"
+    }
+  ]
+}
