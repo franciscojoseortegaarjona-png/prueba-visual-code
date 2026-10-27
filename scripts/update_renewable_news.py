@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "noticias.json"
+OUTPUT = ROOT / "data" / "noticias.json"
 FEEDS = (
     ("El Periódico de la Energía", "https://elperiodicodelaenergia.com/feed/", False),
     ("pv magazine España", "https://www.pv-magazine.es/feed/", False),
