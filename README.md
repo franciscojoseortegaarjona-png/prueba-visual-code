@@ -1,9 +1,7 @@
 # GEENIUS
 
-Sitio web de la Asociación de Estudiantes de Energía de la ETSI Sevilla.
+Sitio web de la Asociación de Estudiantes de Energía de la ETSI Sevilla: https://asociaciongeenius.es
 
-- **Web:** [GEENIUS en GitHub Pages](https://franciscojoseortegaarjona-png.github.io/prueba-visual-code/)
-- **Actualidad:** el workflow `GEENIUS - Actualidad de la Energía` consulta diariamente los RSS del sector a las 06:00 UTC y actualiza `noticias.json`.
-- **Ejecución manual:** GitHub → Actions → GEENIUS - Actualidad de la Energía → Run workflow.
-
-La web se sirve ahora desde GitHub Pages en su dominio predeterminado. El dominio personalizado aún no está asociado.
+- **Gestor de contenido:** `/admin/` (actividades y calendario). Guía en [docs/CMS_SETUP.md](docs/CMS_SETUP.md).
+- **Actualidad:** el workflow `GEENIUS - Actualidad de la Energía` consulta cada día los RSS del sector a las 06:00 UTC y actualiza `data/noticias.json`. Ejecución manual: GitHub → Actions → Run workflow.
+- **Imágenes:** se optimizan solas al subirlas. Estructura completa en [docs/ESTRUCTURA.md](docs/ESTRUCTURA.md).
