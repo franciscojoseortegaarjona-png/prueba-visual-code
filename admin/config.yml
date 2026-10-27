@@ -56,4 +56,5 @@ collections:
             fields:
               - { label: Título, name: titulo, widget: string }
               - { label: Fecha (texto libre), name: fecha, widget: string, hint: "Ejemplo: 6 noviembre 2026, Enero 2027 o Fecha por determinar" }
-              - { label: Imagen, name: imagen, widget: image, hint: "Formato horizontal 16:9 (por ejemplo 1600x900) para que se vea igual que las demás." }
+              - { label: Imagen, name: imagen, widget: image, hint: "Formato horizontal 16:9 (por ejemplo 1600x900) para que se vea igual que las demás. Se optimiza sola al publicar." }
+              - { label: Miniatura (opcional), name: miniatura, widget: image, required: false, hint: "Déjala vacía en actividades nuevas: se usará la propia imagen." }
