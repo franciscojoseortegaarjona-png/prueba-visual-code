@@ -3,86 +3,86 @@
     {
       "titulo": "Calendario GEENIUS 2026/27",
       "fecha": "Curso 2026/27",
-      "imagen": "/1.jpg",
-      "miniatura": "/thumbs/1.jpg"
+      "imagen": "/images/calendario/01.webp",
+      "miniatura": "/images/calendario/miniaturas/01.webp"
     },
     {
       "titulo": "Entrevistas de inscripción",
       "fecha": "23-25 septiembre 2026",
-      "imagen": "/2.jpg",
-      "miniatura": "/thumbs/2.jpg"
+      "imagen": "/images/calendario/02.webp",
+      "miniatura": "/images/calendario/miniaturas/02.webp"
     },
     {
       "titulo": "Visita a las cubiertas de la ETSI",
       "fecha": "Octubre 2026",
-      "imagen": "/3.jpg",
-      "miniatura": "/thumbs/3.jpg"
+      "imagen": "/images/calendario/03.webp",
+      "miniatura": "/images/calendario/miniaturas/03.webp"
     },
     {
       "titulo": "Visita al INTA-CEDEA",
       "fecha": "6 noviembre 2026",
-      "imagen": "/4.jpg",
-      "miniatura": "/thumbs/4.jpg"
+      "imagen": "/images/calendario/04.webp",
+      "miniatura": "/images/calendario/miniaturas/04.webp"
     },
     {
       "titulo": "Taller de tolerancia a la frustración",
       "fecha": "12 noviembre 2026",
-      "imagen": "/5.jpg",
-      "miniatura": "/thumbs/5.jpg"
+      "imagen": "/images/calendario/05.webp",
+      "miniatura": "/images/calendario/miniaturas/05.webp"
     },
     {
       "titulo": "Charla sobre el Apagón de abril 2025",
       "fecha": "Noviembre 2026",
-      "imagen": "/6.jpg",
-      "miniatura": "/thumbs/6.jpg"
+      "imagen": "/images/calendario/06.webp",
+      "miniatura": "/images/calendario/miniaturas/06.webp"
     },
     {
       "titulo": "Charla sobre el Hidrógeno",
       "fecha": "26 noviembre 2026",
-      "imagen": "/7.jpg",
-      "miniatura": "/thumbs/7.jpg"
+      "imagen": "/images/calendario/07.webp",
+      "miniatura": "/images/calendario/miniaturas/07.webp"
     },
     {
       "titulo": "Visita a la Central Nuclear de Almaraz",
       "fecha": "Enero 2027",
-      "imagen": "/8.jpg",
-      "miniatura": "/thumbs/8.jpg"
+      "imagen": "/images/calendario/08.webp",
+      "miniatura": "/images/calendario/miniaturas/08.webp"
     },
     {
       "titulo": "Conferencia sobre los CAE",
       "fecha": "Febrero 2027",
-      "imagen": "/9.jpg",
-      "miniatura": "/thumbs/9.jpg"
+      "imagen": "/images/calendario/09.webp",
+      "miniatura": "/images/calendario/miniaturas/09.webp"
     },
     {
       "titulo": "Charla de orientación con egresados de G.I.E.",
       "fecha": "Marzo 2027",
-      "imagen": "/10.jpg",
-      "miniatura": "/thumbs/10.jpg"
+      "imagen": "/images/calendario/10.webp",
+      "miniatura": "/images/calendario/miniaturas/10.webp"
     },
     {
       "titulo": "Visita a la Refinería de Huelva",
       "fecha": "Fecha por determinar",
-      "imagen": "/11.jpg",
-      "miniatura": "/thumbs/11.jpg"
+      "imagen": "/images/calendario/11.webp",
+      "miniatura": "/images/calendario/miniaturas/11.webp"
     },
     {
       "titulo": "Visita a instalación FV",
       "fecha": "Fecha por determinar",
-      "imagen": "/12.jpg",
-      "miniatura": "/thumbs/12.jpg"
+      "imagen": "/images/calendario/12.webp",
+      "miniatura": "/images/calendario/miniaturas/12.webp"
     },
     {
       "titulo": "Charla sobre Subestaciones Eléctricas",
       "fecha": "Fecha por determinar",
-      "imagen": "/13.jpg",
-      "miniatura": "/thumbs/13.jpg"
+      "imagen": "/images/calendario/13.webp",
+      "miniatura": "/images/calendario/miniaturas/13.webp"
     },
     {
       "titulo": "Charla sobre Energía y Centros de Datos",
       "fecha": "Fecha por determinar",
-      "imagen": "/14.jpg",
-      "miniatura": "/thumbs/14.jpg"
+      "imagen": "/images/calendario/14.webp",
+      "miniatura": "/images/calendario/miniaturas/14.webp"
     }
   ]
 }
