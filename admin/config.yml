@@ -38,3 +38,22 @@ collections:
               - { label: Texto, name: descripcion, widget: text, required: false }
               - { label: Fotografía, name: foto, widget: image, required: false }
               - { label: Enlace de inscripción, name: inscripcion, widget: string, required: false, hint: "Pega la URL completa (https://...). Si lo dejas vacío no aparece botón." }
+  - name: calendario
+    label: Calendario
+    description: Actividades del calendario que aparecen en el carrusel de la web.
+    files:
+      - name: calendario
+        label: Calendario del curso
+        file: data/calendario.json
+        media_folder: /images/calendario
+        public_folder: /images/calendario
+        fields:
+          - label: Actividades del calendario
+            name: slides
+            widget: list
+            label_singular: actividad
+            summary: "{{fields.fecha}} · {{fields.titulo}}"
+            fields:
+              - { label: Título, name: titulo, widget: string }
+              - { label: Fecha (texto libre), name: fecha, widget: string, hint: "Ejemplo: 6 noviembre 2026, Enero 2027 o Fecha por determinar" }
+              - { label: Imagen, name: imagen, widget: image, hint: "Formato horizontal 16:9 (por ejemplo 1600x900) para que se vea igual que las demás." }
