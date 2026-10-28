@@ -229,6 +229,9 @@ header.site::before {
 .activity-list { display: grid; gap: 1rem; }
 .activity-list:empty { display: none; }
 .activity-card { display: grid; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--bg); opacity: 0; transform: translateY(10px); animation: rise 360ms var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 60ms); }
+.activity-cover { all: unset; display: block; position: relative; cursor: zoom-in; }
+.activity-cover:focus-visible { outline: 2px solid var(--gold-ink); outline-offset: -2px; }
+.activity-count { position: absolute; right: .75rem; bottom: .75rem; background: rgba(0,0,0,.7); color: #fff; font-family: var(--mono); font-size: .75rem; padding: .25rem .6rem; border-radius: 999px; }
 .activity-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .activity-body { display: grid; gap: .4rem; padding: 1.1rem 1.25rem 1.25rem; }
 .activity-body time { font-family: var(--mono); font-weight: 500; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); }
@@ -611,13 +614,29 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
       const tarjeta = document.createElement('article');
       tarjeta.className = 'activity-card';
       tarjeta.style.setProperty('--i', i);
-      if (a.foto) {
-        const ruta = new URL(a.foto, window.location.href);
-        if (ruta.protocol === 'https:' || ruta.origin === window.location.origin) {
-          const foto = document.createElement('img');
-          foto.src = ruta.href; foto.alt = ''; foto.loading = 'lazy'; foto.decoding = 'async';
-          tarjeta.append(foto);
+      const urls = [a.foto, ...(Array.isArray(a.fotos) ? a.fotos : [])]
+        .map(f => (f && typeof f === 'object') ? f.imagen : f)
+        .filter(Boolean)
+        .map(f => { try { return new URL(f, window.location.href); } catch (e) { return null; } })
+        .filter(r => r && (r.protocol === 'https:' || r.origin === window.location.origin))
+        .map(r => r.href)
+        .filter((u, k, arr) => arr.indexOf(u) === k);
+      if (urls.length) {
+        const portada = document.createElement('button');
+        portada.type = 'button';
+        portada.className = 'activity-cover';
+        portada.setAttribute('aria-label', urls.length > 1 ? `Ver ${urls.length} fotos de ${a.titulo || 'la actividad'}` : `Ampliar foto de ${a.titulo || 'la actividad'}`);
+        const foto = document.createElement('img');
+        foto.src = urls[0]; foto.alt = ''; foto.loading = 'lazy'; foto.decoding = 'async';
+        portada.append(foto);
+        if (urls.length > 1) {
+          const n = document.createElement('span');
+          n.className = 'activity-count';
+          n.textContent = `${urls.length} fotos`;
+          portada.append(n);
         }
+        portada.addEventListener('click', () => abrirGaleria(urls, a.titulo));
+        tarjeta.append(portada);
       }
       const cuerpo = document.createElement('div');
       cuerpo.className = 'activity-body';
@@ -639,8 +658,62 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
       if (a.inscripcion) { try { const enlace = new URL(a.inscripcion); if (enlace.protocol === 'https:') { const boton = document.createElement('a'); boton.className = 'btn btn-primary'; boton.href = enlace.href; boton.target = '_blank'; boton.rel = 'noopener noreferrer'; boton.textContent = 'Inscribirse'; boton.style.marginTop = '1rem'; cuerpo.append(boton); } } catch (e) { /* URL inválida: sin botón */ } } tarjeta.append(cuerpo);
       return tarjeta;
     }
+    let galeria = null;
+    function abrirGaleria(urls, titulo) {
+      if (!galeria) {
+        const dlg = document.createElement('dialog');
+        dlg.className = 'gal';
+        dlg.setAttribute('aria-label', 'Galería de fotos');
+        dlg.innerHTML = '<button type="button" class="gal-close" aria-label="Cerrar">&times;</button>' +
+          '<button type="button" class="gal-nav gal-prev" aria-label="Foto anterior">&#8249;</button>' +
+          '<img alt=""><button type="button" class="gal-nav gal-next" aria-label="Foto siguiente">&#8250;</button>' +
+          '<div class="gal-info"></div>';
+        document.body.append(dlg);
+        galeria = { dlg, img: dlg.querySelector('img'), info: dlg.querySelector('.gal-info'), urls: [], i: 0, titulo: '' };
+        const ir = d => { const g = galeria; g.i = (g.i + d + g.urls.length) % g.urls.length; mostrarFoto(); };
+        dlg.querySelector('.gal-prev').onclick = () => ir(-1);
+        dlg.querySelector('.gal-next').onclick = () => ir(1);
+        dlg.querySelector('.gal-close').onclick = () => dlg.close();
+        dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+        dlg.addEventListener('keydown', e => {
+          if (e.key === 'ArrowLeft') ir(-1);
+          if (e.key === 'ArrowRight') ir(1);
+        });
+        let x0 = null;
+        dlg.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+        dlg.addEventListener('touchend', e => {
+          if (x0 === null) return;
+          const dx = e.changedTouches[0].clientX - x0; x0 = null;
+          if (Math.abs(dx) > 40) ir(dx < 0 ? 1 : -1);
+        });
+      }
+      Object.assign(galeria, { urls, i: 0, titulo: titulo || '' });
+      const multi = urls.length > 1;
+      galeria.dlg.querySelectorAll('.gal-nav').forEach(b => b.hidden = !multi);
+      mostrarFoto();
+      galeria.dlg.showModal();
+    }
+    function mostrarFoto() {
+      const g = galeria;
+      g.img.src = g.urls[g.i];
+      g.img.alt = g.titulo;
+      g.info.textContent = (g.titulo ? g.titulo + ' · ' : '') + (g.urls.length > 1 ? `${g.i + 1} / ${g.urls.length}` : '');
+    }
     cargarNovedades();
   </script>
+  <style>
+    dialog.gal { border: 0; padding: 0; background: transparent; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; margin: 0; }
+    dialog.gal::backdrop { background: rgba(0,0,0,.88); }
+    dialog.gal[open] { display: grid; place-items: center; }
+    dialog.gal img { max-width: min(92vw, 1200px); max-height: 82vh; object-fit: contain; border-radius: 8px; }
+    .gal-info { position: absolute; bottom: 1.25rem; left: 0; right: 0; text-align: center; color: #fff; font-size: .9rem; }
+    .gal-nav, .gal-close { position: absolute; background: rgba(255,255,255,.15); color: #fff; border: 0; border-radius: 50%; width: 3rem; height: 3rem; font-size: 2rem; line-height: 1; cursor: pointer; }
+    .gal-nav:hover, .gal-close:hover { background: rgba(255,255,255,.3); }
+    .gal-nav[hidden] { display: none; }
+    .gal-prev { left: 1rem; top: 50%; translate: 0 -50%; }
+    .gal-next { right: 1rem; top: 50%; translate: 0 -50%; }
+    .gal-close { top: 1rem; right: 1rem; }
+  </style>
 </section>
 
 <!-- ACTUALIDAD DE LA ENERGÍA -->

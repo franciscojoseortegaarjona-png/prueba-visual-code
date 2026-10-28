@@ -18,7 +18,7 @@ La OAuth App utiliza el permiso `public_repo` para escribir en el repositorio p�
 
 ## Publicar novedades
 
-En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo, texto y, si quieres, una fotografía. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`; la web se actualiza cuando termina el despliegue de GitHub Pages.
+En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo y texto. Para adjuntar varias fotos, usa el campo **Fotografías**: sube una y pulsa **Add fotografía** para agregar las demás. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`; la web se actualiza cuando termina el despliegue de GitHub Pages.
 # Gestor de Novedades GEENIUS
 
 El panel de edición estará en `https://asociaciongeenius.es/admin/`. Permite iniciar sesión con GitHub, editar las actividades y subir fotografías. Al guardar, Decap CMS crea un commit en este repositorio y GitHub Pages publica los cambios automáticamente.
@@ -41,4 +41,4 @@ La OAuth App se configura con permiso `public_repo` para escribir en repositorio
 
 ## Publicar novedades
 
-En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo, texto y, si quieres, una fotografía. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`; la web se actualiza cuando termina el despliegue de GitHub Pages.
+En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo y texto. Para adjuntar varias fotos, usa el campo **Fotografías**: sube una y pulsa **Add fotografía** para agregar las demás. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`; la web se actualiza cuando termina el despliegue de GitHub Pages.

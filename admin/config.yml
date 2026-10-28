@@ -36,7 +36,14 @@ collections:
                   - { label: Realizada, value: realizada }
                 default: proxima
               - { label: Texto, name: descripcion, widget: text, required: false }
-              - { label: Fotografía, name: foto, widget: image, required: false }
+              - { label: Fotografía principal (antigua), name: foto, widget: image, required: false, hint: "Para nuevas actividades, añade las imágenes en el campo Fotografías." }
+              - label: Fotografías
+                name: fotos
+                widget: list
+                label_singular: fotografía
+                required: false
+                hint: "Sube una foto y pulsa «Add fotografía» para agregar todas las que necesites."
+                field: { label: Foto, name: imagen, widget: image }
               - { label: Enlace de inscripción, name: inscripcion, widget: string, required: false, hint: "Pega la URL completa (https://...). Si lo dejas vacío no aparece botón." }
   - name: calendario
     label: Calendario
