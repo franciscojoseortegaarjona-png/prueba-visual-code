@@ -6,7 +6,10 @@
       "fecha": "2026-10-28",
       "descripcion": "",
       "foto": "/images/novedades/whatsapp-image-2026-10-28-at-10.35.30.jpeg",
-      "inscripcion": ""
+      "inscripcion": "",
+      "fotos": [
+        "/images/novedades/whatsapp-image-2026-10-28-at-10.59.35.jpeg"
+      ]
     },
     {
       "tipo": "proxima",
