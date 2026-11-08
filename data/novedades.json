@@ -13,12 +13,16 @@
       ]
     },
     {
-      "tipo": "proxima",
+      "tipo": "realizada",
       "titulo": "Excursión al INTA, en Mazagón",
       "fecha": "2026-11-06",
-      "descripcion": "¡Visita al INTA! El viernes 6 de noviembre GEENIUS visitará el Instituto Nacional de Técnica Aeroespacial de \"el Arenosillo\", en Mazagón, donde tendremos la oportunidad de conocer sus SMART GRIDS basadas en Hidrógeno ⚛️⚡, pilas de combustible y sus instalaciones. \n¿Te animas? ¡Rellena el formulario!",
-      "foto": "/images/novedades/whatsapp-image-2026-10-27-at-21.24.23.jpeg",
-      "inscripcion": ""
+      "descripcion": "¡Visita al INTA! El viernes 6 de noviembre GEENIUS visitó el Instituto Nacional de Técnica Aeroespacial de \"el Arenosillo\", en Mazagón, donde conocimos sus SMART GRIDS basadas en Hidrógeno ⚛️⚡, pilas de combustible y sus instalaciones. \n",
+      "foto": "/images/novedades/whatsapp-image-2026-11-08-at-11.44.25.jpeg",
+      "inscripcion": "",
+      "fotos": [
+        "/images/novedades/whatsapp-image-2026-11-08-at-11.43.05.jpeg",
+        "/images/novedades/whatsapp-image-2026-11-08-at-11.43.04.jpeg"
+      ]
     },
     {
       "tipo": "realizada",
