@@ -262,43 +262,49 @@ header.site::before {
 .pillars strong { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 2vw, 1.5rem); letter-spacing: -.03em; line-height: 1.15; color: var(--head); }
 .pillars span { color: var(--muted); max-width: 38rem; }
 .subhead { font-family: var(--mono); font-weight: 500; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: clamp(3rem, 6vw, 4.5rem) 0 1.25rem; }
-.card-photo { margin: 0 0 1.75rem; }
-.card-photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); }
 
-/* Qué hacemos: bento asimétrico */
-.bento { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.25rem; }
-.card {
-  display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl);
-  padding: clamp(1.5rem, 3vw, 2.5rem); box-shadow: var(--shadow);
-}
-.card .idx { font-family: var(--mono); font-size: .8125rem; letter-spacing: .08em; color: var(--muted); margin-bottom: auto; padding-bottom: 2rem; }
-.card .tile { width: 3.25rem; height: 3.25rem; border-radius: 1rem; background: var(--navy); color: var(--gold); display: grid; place-items: center; margin-bottom: 1.5rem; }
-.card .tile .icon { width: 1.5rem; height: 1.5rem; }
-.card h3 { font-family: var(--display); font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 1.75rem); line-height: 1.12; letter-spacing: -.03em; color: var(--head); margin-bottom: .75rem; }
-.card p { color: var(--muted); font-size: 1rem; max-width: 34rem; }
-.card.feature { grid-row: span 2; background: linear-gradient(165deg, var(--navy) 0%, var(--navy-deep) 100%); border-color: transparent; color: var(--on-navy); min-height: 26rem; }
-.card.feature .idx { color: var(--on-navy-muted); }
-.card.feature .tile { background: var(--gold); color: var(--navy-deep); width: 4rem; height: 4rem; border-radius: 1.25rem; }
-.card.feature .tile .icon { width: 1.9rem; height: 1.9rem; }
-.card.feature h3 { color: #fff; font-size: clamp(1.9rem, 3.4vw, 2.75rem); line-height: 1.04; }
-.card.feature p { color: var(--on-navy-muted); font-size: 1.0625rem; }
+/* Nuestras áreas: bloques amplios con galerías reutilizables */
+.areas-list { display: grid; gap: 1.25rem; }
+.area-card { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: stretch; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl); box-shadow: var(--shadow); }
+.area-card .media-gallery { padding: clamp(1rem, 2vw, 1.5rem); align-content: center; }
+.area-card .media-cover, .area-card .media-empty { border-radius: var(--radius-lg); }
+.media-gallery { display: grid; gap: .75rem; min-width: 0; }
+.media-cover { all: unset; display: block; position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-lg); background: var(--surface-2); cursor: zoom-in; }
+.media-cover:focus-visible, .media-thumb:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.media-cover img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.media-empty { display: grid; place-items: center; aspect-ratio: 4 / 3; background: linear-gradient(145deg, var(--navy), var(--navy-deep)); color: var(--gold); }
+.media-empty .icon { width: clamp(3rem, 6vw, 5rem); height: clamp(3rem, 6vw, 5rem); }
+.media-thumbs { display: flex; gap: .6rem; overflow-x: auto; padding: .15rem .1rem .35rem; overscroll-behavior-inline: contain; scrollbar-width: thin; }
+.media-thumbs:empty { display: none; }
+.media-thumb { flex: 0 0 5.75rem; min-height: 44px; aspect-ratio: 4 / 3; overflow: hidden; padding: 0; border: 2px solid transparent; border-radius: .7rem; background: var(--surface-2); cursor: pointer; opacity: .72; transition: opacity 160ms ease, border-color 160ms ease; }
+.media-thumb[aria-current="true"] { border-color: var(--gold-ink); opacity: 1; }
+.media-thumb img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.area-body { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(1.5rem, 4vw, 3.5rem); }
+.area-body .idx { font-family: var(--mono); font-size: .8125rem; letter-spacing: .08em; color: var(--muted); margin-bottom: 1.25rem; }
+.area-body .tile { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; margin-bottom: 1.25rem; border-radius: 1.1rem; background: var(--gold); color: var(--navy-deep); }
+.area-body .tile .icon { width: 1.7rem; height: 1.7rem; }
+.area-body h4 { margin-bottom: .8rem; color: var(--head); font-family: var(--display); font-size: clamp(1.6rem, 2.8vw, 2.25rem); font-weight: 600; line-height: 1.08; letter-spacing: -.03em; }
+.area-body p { max-width: 38rem; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
 
 /* Novedades */
-.activity-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 1.25rem; }
+.activity-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
 .activity-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl); padding: clamp(1.5rem, 3vw, 2.5rem); box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 1.5rem; }
 .activity-panel h3 { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.15; letter-spacing: -.03em; color: var(--head); }
 .activity-empty[hidden] { display: none; }
-.activity-list { display: grid; gap: 1rem; }
+.activity-list { display: grid; gap: 1.25rem; }
 .activity-list:empty { display: none; }
-.activity-card { display: grid; gap: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--bg); opacity: 0; transform: translateY(10px); animation: rise 360ms var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 60ms); }
-.activity-cover { all: unset; display: block; position: relative; cursor: zoom-in; }
-.activity-cover:focus-visible { outline: 2px solid var(--gold-ink); outline-offset: -2px; }
-.activity-count { position: absolute; right: .75rem; bottom: .75rem; background: rgba(0,0,0,.7); color: #fff; font-family: var(--mono); font-size: .75rem; padding: .25rem .6rem; border-radius: 999px; }
-.activity-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
-.activity-body { display: grid; gap: .4rem; padding: 1.1rem 1.25rem 1.25rem; }
+.activity-card { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: center; gap: clamp(1.25rem, 3vw, 2.5rem); padding: clamp(.85rem, 1.5vw, 1.25rem); border: 1px solid var(--line); border-radius: var(--radius-lg); background: var(--bg); opacity: 0; transform: translateY(10px); animation: rise 360ms var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 60ms); }
+.activity-card.without-media { grid-template-columns: minmax(0, 1fr); }
+.activity-body { display: grid; align-content: center; gap: .7rem; min-width: 0; padding: clamp(.25rem, 1.5vw, 1.25rem); }
 .activity-body time { font-family: var(--mono); font-weight: 500; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-ink); }
-.activity-body h4 { font-family: var(--display); font-weight: 600; font-size: 1.2rem; line-height: 1.2; letter-spacing: -.02em; color: var(--head); }
-.activity-body p { color: var(--muted); font-size: .98rem; white-space: pre-line; }
+.activity-body h4 { font-family: var(--display); font-weight: 600; font-size: clamp(1.35rem, 2.3vw, 1.8rem); line-height: 1.12; letter-spacing: -.03em; color: var(--head); text-wrap: balance; }
+.activity-body p { color: var(--muted); font-size: 1rem; line-height: 1.7; white-space: pre-line; }
+.activity-place { color: var(--muted); font-size: .95rem; }
+.activity-place strong { color: var(--head); font-weight: 600; }
+.activity-detail { display: grid; gap: .3rem; padding-top: .65rem; border-top: 1px solid var(--line); }
+.activity-detail h5 { color: var(--head); font-family: var(--display); font-size: .98rem; font-weight: 600; }
+.activity-detail p { font-size: .95rem; }
+.activity-body .btn { justify-self: start; margin-top: .4rem !important; }
 .activity-empty { display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.25rem; border: 1.5px dashed var(--line); border-radius: var(--radius-lg); color: var(--muted); font-size: .98rem; flex: 1; }
 .activity-empty .glyph { width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--surface-2); color: var(--head); display: grid; place-items: center; flex: none; }
 .activity-empty .glyph .icon { width: 1.3rem; height: 1.3rem; }
@@ -429,10 +435,9 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
   .news-card:hover time .icon { transform: translateX(4px); }
   .nav-btn:hover { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
   .thumbs button:hover { opacity: .9; }
+  .media-thumb:hover { opacity: 1; }
   .btn-forms:hover { background: var(--gold); color: var(--navy-deep); }
   .social a:hover { background: var(--gold); border-color: var(--gold); color: var(--navy-deep); }
-  .card { transition: transform 240ms var(--ease-out), border-color 160ms ease; }
-  .card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--gold) 70%, transparent); }
 }
 @media (hover: hover) and (pointer: fine) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn-forms:hover { background: #fff; } }
 
@@ -471,12 +476,17 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
   .hero-buttons .btn { width: 100%; }
   .about, .join, .foot, .activity-grid, .story, .method { grid-template-columns: 1fr; }
   .story .photo { position: static; }
-  .bento, .news-grid { grid-template-columns: 1fr; }
-  .card.feature, .news-card:first-child { grid-row: auto; min-height: 0; }
-  .card.feature { min-height: 20rem; }
+  .news-grid { grid-template-columns: 1fr; }
+  .activity-card, .area-card { grid-template-columns: minmax(0, 1fr); }
+  .area-card .media-gallery { padding: .85rem .85rem 0; }
+  .activity-body { padding: .5rem .35rem .75rem; }
+  .news-card:first-child { grid-row: auto; min-height: 0; }
   .news-card { min-height: 0; }
   .caption { align-items: flex-start; }
   .thumbs button { width: 6.5rem; }
+}
+@media (min-width: 740px) and (max-width: 860px) {
+  .activity-card, .area-card { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
 }
 </style>
 
@@ -602,26 +612,50 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
       </ul>
     </div>
     <h3 class="subhead reveal">Nuestras áreas</h3>
-    <div class="bento">
-      <article class="card feature reveal">
-        <figure class="card-photo"><img src="images/secciones/formacion-practica-1600.webp" srcset="images/secciones/formacion-practica-800.webp 800w, images/secciones/formacion-practica-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 40vw" width="1600" height="1200" alt="Dos estudiantes trasladando un panel fotovoltaico durante una visita a un hangar con un motor de avión" loading="lazy" decoding="async"></figure>
-        <span class="idx">01</span>
-        <div class="tile"><svg class="icon" aria-hidden="true"><use href="#i-cap"/></svg></div>
-        <h3>Formación Práctica</h3>
-        <p>Complementamos lo aprendido en las aulas de la ETSI con talleres técnicos, ponencias de expertos y visitas a instalaciones energéticas clave.</p>
-      </article>
-      <article class="card reveal" style="--i:1">
-        <div class="tile"><svg class="icon" aria-hidden="true"><use href="#i-mega"/></svg></div>
-        <h3>Divulgación Activa</h3>
-        <p>Creamos contenido científico y energético de alto impacto para nuestras redes sociales acercando la energía a todo el mundo.</p>
-      </article>
-      <article class="card reveal" style="--i:2">
-        <div class="tile"><svg class="icon" aria-hidden="true"><use href="#i-net"/></svg></div>
-        <h3>Networking Profesional</h3>
-        <p>Construimos puentes directos entre estudiantes de ingeniería de la energía y empresas líderes del sector para impulsar vuestro futuro laboral.</p>
-      </article>
-    </div>
+    <div class="areas-list" id="areas-list" aria-live="polite"></div>
   </div>
+  <script>
+    async function cargarAreas() {
+      const contenedor = document.getElementById('areas-list');
+      try {
+        const respuesta = await fetch('data/areas.json', { cache: 'no-cache' });
+        if (!respuesta.ok) throw new Error(`No se pudo cargar areas.json (${respuesta.status})`);
+        const data = await respuesta.json();
+        if (!Array.isArray(data.areas)) throw new Error('El archivo areas.json no contiene una lista de áreas válida');
+        contenedor.replaceChildren(...data.areas.map((area, i) => crearArea(area, i)));
+      } catch (error) {
+        console.error('Error al cargar las áreas:', error);
+      }
+    }
+    function crearArea(area, i) {
+      const articulo = document.createElement('article');
+      articulo.className = 'area-card';
+      const imagenes = Array.isArray(area.imagenes) ? area.imagenes : [];
+      articulo.append(crearGaleria(imagenes, area.titulo, 'area-gallery', area.icono));
+      const cuerpo = document.createElement('div');
+      cuerpo.className = 'area-body';
+      const numero = document.createElement('span');
+      numero.className = 'idx';
+      numero.textContent = area.id || String(i + 1).padStart(2, '0');
+      const tile = document.createElement('div');
+      tile.className = 'tile';
+      const icono = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      icono.classList.add('icon');
+      icono.setAttribute('aria-hidden', 'true');
+      const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      use.setAttribute('href', `#i-${area.icono || 'cap'}`);
+      icono.append(use);
+      tile.append(icono);
+      const titulo = document.createElement('h4');
+      titulo.textContent = area.titulo || 'Área';
+      const descripcion = document.createElement('p');
+      descripcion.textContent = area.descripcion || '';
+      cuerpo.append(numero, tile, titulo, descripcion);
+      articulo.append(cuerpo);
+      return articulo;
+    }
+    document.addEventListener('DOMContentLoaded', cargarAreas, { once: true });
+  </script>
 </section>
 
 <!-- NOVEDADES DE LA ASOCIACIÓN -->
@@ -672,34 +706,102 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
         console.error('Error al cargar las novedades:', error);
       }
     }
+    function normalizarImagenes(imagenes, titulo) {
+      const vistos = new Set();
+      return imagenes.map((foto, i) => {
+        const src = typeof foto === 'string' ? foto : foto && (foto.imagen || foto.src);
+        if (!src) return null;
+        let url;
+        try { url = new URL(src, window.location.href); } catch (error) { return null; }
+        if (url.protocol !== 'https:' && url.origin !== window.location.origin) return null;
+        if (vistos.has(url.href)) return null;
+        vistos.add(url.href);
+        const alt = typeof foto === 'object' && foto.alt ? foto.alt : `Foto ${i + 1} de ${titulo || 'la actividad'}`;
+        return { src: url.href, alt, srcset: typeof foto === 'object' ? foto.srcset || '' : '', sizes: typeof foto === 'object' ? foto.sizes || '' : '' };
+      }).filter(Boolean);
+    }
+    function crearGaleria(imagenes, titulo, clase, icono) {
+      const galeriaLocal = document.createElement('div');
+      galeriaLocal.className = `media-gallery ${clase || ''}`.trim();
+      const fotos = normalizarImagenes(imagenes, titulo);
+      if (!fotos.length) {
+        const vacio = document.createElement('div');
+        vacio.className = 'media-empty';
+        vacio.setAttribute('aria-hidden', 'true');
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.classList.add('icon');
+        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        use.setAttribute('href', `#i-${icono || 'cap'}`);
+        svg.append(use);
+        vacio.append(svg);
+        galeriaLocal.append(vacio);
+        return galeriaLocal;
+      }
+      const portada = document.createElement('button');
+      portada.type = 'button';
+      portada.className = 'media-cover';
+      portada.setAttribute('aria-label', `Ampliar foto de ${titulo || 'la actividad'}`);
+      const fotoPrincipal = document.createElement('img');
+      fotoPrincipal.src = fotos[0].src;
+      if (fotos[0].srcset) fotoPrincipal.srcset = fotos[0].srcset;
+      if (fotos[0].sizes) fotoPrincipal.sizes = fotos[0].sizes;
+      fotoPrincipal.alt = fotos[0].alt;
+      fotoPrincipal.loading = 'lazy';
+      fotoPrincipal.decoding = 'async';
+      portada.append(fotoPrincipal);
+      if (fotos.length > 1) {
+        const cuenta = document.createElement('span');
+        cuenta.className = 'activity-count';
+        cuenta.textContent = `${fotos.length} fotos`;
+        portada.append(cuenta);
+      }
+      portada.addEventListener('click', () => abrirGaleria(fotos, titulo, 0));
+      galeriaLocal.append(portada);
+      if (fotos.length > 1) {
+        const miniaturas = document.createElement('div');
+        miniaturas.className = 'media-thumbs';
+        miniaturas.setAttribute('role', 'group');
+        miniaturas.setAttribute('aria-label', `Fotografías de ${titulo || 'la actividad'}`);
+        fotos.forEach((foto, i) => {
+          const boton = document.createElement('button');
+          boton.type = 'button';
+          boton.className = 'media-thumb';
+          boton.setAttribute('aria-label', `Ver foto ${i + 1} de ${fotos.length}: ${foto.alt}`);
+          boton.setAttribute('aria-current', String(i === 0));
+          const imagen = document.createElement('img');
+          imagen.src = foto.src;
+          imagen.alt = '';
+          imagen.loading = 'lazy';
+          imagen.decoding = 'async';
+          boton.append(imagen);
+          boton.addEventListener('click', () => abrirGaleria(fotos, titulo, i));
+          miniaturas.append(boton);
+        });
+        galeriaLocal.append(miniaturas);
+      }
+      return galeriaLocal;
+    }
+    function crearDetalle(cuerpo, titulo, texto) {
+      if (typeof texto !== 'string' || !texto.trim()) return;
+      const detalle = document.createElement('div');
+      detalle.className = 'activity-detail';
+      const encabezado = document.createElement('h5');
+      encabezado.textContent = titulo;
+      const descripcion = document.createElement('p');
+      descripcion.textContent = texto;
+      detalle.append(encabezado, descripcion);
+      cuerpo.append(detalle);
+    }
     function crearTarjeta(a, i) {
       const tarjeta = document.createElement('article');
       tarjeta.className = 'activity-card';
       tarjeta.style.setProperty('--i', i);
-      const urls = [a.foto, ...(Array.isArray(a.fotos) ? a.fotos : [])]
-        .map(f => (f && typeof f === 'object') ? f.imagen : f)
-        .filter(Boolean)
-        .map(f => { try { return new URL(f, window.location.href); } catch (e) { return null; } })
-        .filter(r => r && (r.protocol === 'https:' || r.origin === window.location.origin))
-        .map(r => r.href)
-        .filter((u, k, arr) => arr.indexOf(u) === k);
-      if (urls.length) {
-        const portada = document.createElement('button');
-        portada.type = 'button';
-        portada.className = 'activity-cover';
-        portada.setAttribute('aria-label', urls.length > 1 ? `Ver ${urls.length} fotos de ${a.titulo || 'la actividad'}` : `Ampliar foto de ${a.titulo || 'la actividad'}`);
-        const foto = document.createElement('img');
-        foto.src = urls[0]; foto.alt = ''; foto.loading = 'lazy'; foto.decoding = 'async';
-        portada.append(foto);
-        if (urls.length > 1) {
-          const n = document.createElement('span');
-          n.className = 'activity-count';
-          n.textContent = `${urls.length} fotos`;
-          portada.append(n);
-        }
-        portada.addEventListener('click', () => abrirGaleria(urls, a.titulo));
-        tarjeta.append(portada);
-      }
+      const fotos = normalizarImagenes(
+        [a.foto && typeof a.foto === 'object' ? { ...a.foto, alt: a.foto.alt || a.fotoAlt } : a.foto && { imagen: a.foto, alt: a.fotoAlt }, ...(Array.isArray(a.fotos) ? a.fotos : [])].filter(Boolean),
+        a.titulo
+      );
+      if (fotos.length) tarjeta.append(crearGaleria(fotos, a.titulo, 'activity-gallery'));
+      else tarjeta.classList.add('without-media');
       const cuerpo = document.createElement('div');
       cuerpo.className = 'activity-body';
       const d = new Date(a.fecha);
@@ -712,16 +814,28 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
       const titulo = document.createElement('h4');
       titulo.textContent = a.titulo || 'Actividad';
       cuerpo.append(titulo);
-      if (a.descripcion) {
+      if (typeof a.lugar === 'string' && a.lugar.trim()) {
+        const lugar = document.createElement('p');
+        lugar.className = 'activity-place';
+        const etiqueta = document.createElement('strong');
+        etiqueta.textContent = 'Lugar: ';
+        lugar.append(etiqueta, document.createTextNode(a.lugar));
+        cuerpo.append(lugar);
+      }
+      if (typeof a.descripcion === 'string' && a.descripcion.trim()) {
         const p = document.createElement('p');
         p.textContent = a.descripcion;
         cuerpo.append(p);
       }
-      if (a.inscripcion) { try { const enlace = new URL(a.inscripcion); if (enlace.protocol === 'https:') { const boton = document.createElement('a'); boton.className = 'btn btn-primary'; boton.href = enlace.href; boton.target = '_blank'; boton.rel = 'noopener noreferrer'; boton.textContent = 'Inscribirse'; boton.style.marginTop = '1rem'; cuerpo.append(boton); } } catch (e) { /* URL inválida: sin botón */ } } tarjeta.append(cuerpo);
+      crearDetalle(cuerpo, 'Objetivos', a.objetivos);
+      crearDetalle(cuerpo, 'Aprendizajes', a.aprendizajes);
+      crearDetalle(cuerpo, 'Experiencia de los participantes', a.experiencia);
+      if (a.inscripcion) { try { const enlace = new URL(a.inscripcion); if (enlace.protocol === 'https:') { const boton = document.createElement('a'); boton.className = 'btn btn-primary'; boton.href = enlace.href; boton.target = '_blank'; boton.rel = 'noopener noreferrer'; boton.textContent = 'Inscribirse'; cuerpo.append(boton); } } catch (e) { /* URL inválida: sin botón */ } }
+      tarjeta.append(cuerpo);
       return tarjeta;
     }
     let galeria = null;
-    function abrirGaleria(urls, titulo) {
+    function abrirGaleria(imagenes, titulo, indice) {
       if (!galeria) {
         const dlg = document.createElement('dialog');
         dlg.className = 'gal';
@@ -731,8 +845,8 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
           '<img alt=""><button type="button" class="gal-nav gal-next" aria-label="Foto siguiente">&#8250;</button>' +
           '<div class="gal-info"></div>';
         document.body.append(dlg);
-        galeria = { dlg, img: dlg.querySelector('img'), info: dlg.querySelector('.gal-info'), urls: [], i: 0, titulo: '' };
-        const ir = d => { const g = galeria; g.i = (g.i + d + g.urls.length) % g.urls.length; mostrarFoto(); };
+        galeria = { dlg, img: dlg.querySelector('img'), info: dlg.querySelector('.gal-info'), imagenes: [], i: 0, titulo: '' };
+        const ir = d => { const g = galeria; g.i = (g.i + d + g.imagenes.length) % g.imagenes.length; mostrarFoto(); };
         dlg.querySelector('.gal-prev').onclick = () => ir(-1);
         dlg.querySelector('.gal-next').onclick = () => ir(1);
         dlg.querySelector('.gal-close').onclick = () => dlg.close();
@@ -749,17 +863,18 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
           if (Math.abs(dx) > 40) ir(dx < 0 ? 1 : -1);
         });
       }
-      Object.assign(galeria, { urls, i: 0, titulo: titulo || '' });
-      const multi = urls.length > 1;
+      Object.assign(galeria, { imagenes, i: indice || 0, titulo: titulo || '' });
+      const multi = imagenes.length > 1;
       galeria.dlg.querySelectorAll('.gal-nav').forEach(b => b.hidden = !multi);
       mostrarFoto();
       galeria.dlg.showModal();
     }
     function mostrarFoto() {
       const g = galeria;
-      g.img.src = g.urls[g.i];
-      g.img.alt = g.titulo;
-      g.info.textContent = (g.titulo ? g.titulo + ' · ' : '') + (g.urls.length > 1 ? `${g.i + 1} / ${g.urls.length}` : '');
+      const foto = g.imagenes[g.i];
+      g.img.src = foto.src;
+      g.img.alt = foto.alt;
+      g.info.textContent = (g.titulo ? g.titulo + ' · ' : '') + (g.imagenes.length > 1 ? `${g.i + 1} / ${g.imagenes.length}` : '');
     }
     cargarNovedades();
   </script>
@@ -770,6 +885,7 @@ footer { background: var(--navy-deep); color: var(--on-navy); padding-top: clamp
     dialog.gal img { max-width: min(92vw, 1200px); max-height: 82vh; object-fit: contain; border-radius: 8px; }
     .gal-info { position: absolute; bottom: 1.25rem; left: 0; right: 0; text-align: center; color: #fff; font-size: .9rem; }
     .gal-nav, .gal-close { position: absolute; background: rgba(255,255,255,.15); color: #fff; border: 0; border-radius: 50%; width: 3rem; height: 3rem; font-size: 2rem; line-height: 1; cursor: pointer; }
+    .gal-nav, .gal-close { min-width: 44px; min-height: 44px; }
     .gal-nav:hover, .gal-close:hover { background: rgba(255,255,255,.3); }
     .gal-nav[hidden] { display: none; }
     .gal-prev { left: 1rem; top: 50%; translate: 0 -50%; }

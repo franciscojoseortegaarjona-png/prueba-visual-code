@@ -35,15 +35,22 @@ collections:
                   - { label: Próxima, value: proxima }
                   - { label: Realizada, value: realizada }
                 default: proxima
+              - { label: Lugar, name: lugar, widget: string, required: false }
               - { label: Texto, name: descripcion, widget: text, required: false }
+              - { label: Objetivos, name: objetivos, widget: text, required: false }
+              - { label: Aprendizajes, name: aprendizajes, widget: text, required: false }
+              - { label: Experiencia de los participantes, name: experiencia, widget: text, required: false }
               - { label: Fotografía principal (antigua), name: foto, widget: image, required: false, hint: "Para nuevas actividades, añade las imágenes en el campo Fotografías." }
+              - { label: Texto alternativo de la fotografía principal, name: fotoAlt, widget: string, required: false }
               - label: Fotografías
                 name: fotos
                 widget: list
                 label_singular: fotografía
                 required: false
-                hint: "Sube una foto y pulsa «Add fotografía» para agregar todas las que necesites."
-                field: { label: Foto, name: imagen, widget: image }
+                hint: "Añade una fotografía por elemento. El texto alternativo es opcional; si se deja vacío, la web genera uno a partir del título."
+                fields:
+                  - { label: Foto, name: imagen, widget: image }
+                  - { label: Texto alternativo, name: alt, widget: string, required: false }
               - { label: Enlace de inscripción, name: inscripcion, widget: string, required: false, hint: "Pega la URL completa (https://...). Si lo dejas vacío no aparece botón." }
   - name: calendario
     label: Calendario

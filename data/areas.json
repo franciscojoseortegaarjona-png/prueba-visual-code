@@ -1,0 +1,32 @@
+{
+  "areas": [
+    {
+      "id": "01",
+      "titulo": "Formación Práctica",
+      "icono": "cap",
+      "descripcion": "Complementamos lo aprendido en las aulas de la ETSI con talleres técnicos, ponencias de expertos y visitas a instalaciones energéticas clave.",
+      "imagenes": [
+        {
+          "src": "images/secciones/formacion-practica-1600.webp",
+          "srcset": "images/secciones/formacion-practica-800.webp 800w, images/secciones/formacion-practica-1600.webp 1600w",
+          "sizes": "(max-width: 860px) 100vw, 40vw",
+          "alt": "Dos estudiantes trasladando un panel fotovoltaico durante una visita a un hangar con un motor de avión"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "titulo": "Divulgación Activa",
+      "icono": "mega",
+      "descripcion": "Creamos contenido científico y energético de alto impacto para nuestras redes sociales acercando la energía a todo el mundo.",
+      "imagenes": []
+    },
+    {
+      "id": "03",
+      "titulo": "Networking Profesional",
+      "icono": "net",
+      "descripcion": "Construimos puentes directos entre estudiantes de ingeniería de la energía y empresas líderes del sector para impulsar vuestro futuro laboral.",
+      "imagenes": []
+    }
+  ]
+}

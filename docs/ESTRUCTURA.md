@@ -7,6 +7,7 @@ README.md                  Resumen del proyecto
 admin/                     Gestor de contenido (Decap CMS) en /admin/
 data/
   novedades.json           Actividades de "Novedades" (se edita desde el gestor)
+  areas.json               Textos e imágenes de "Nuestras áreas"
   calendario.json          Diapositivas del calendario (se edita desde el gestor)
   noticias.json            Actualidad del sector (se actualiza sola cada día)
 images/
@@ -26,4 +27,5 @@ docs/                      Documentación
 
 - Formato WebP (mismo aspecto con menos peso). Los logos están en WebP sin pérdida.
 - Las imágenes que se suban desde el gestor se redimensionan a 1600 px de ancho como máximo y se recomprimen solas (tarea "Optimizar imágenes").
+- Las fotografías de las áreas se configuran en `data/areas.json`; añade rutas reales a `imagenes` y un texto `alt` por fotografía. Las áreas sin fotos mantienen su icono hasta que se agreguen imágenes.
 - Calendario: sube imágenes horizontales 16:9 (por ejemplo 1600x900) desde el gestor, en **Calendario**.

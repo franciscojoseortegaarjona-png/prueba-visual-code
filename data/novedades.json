@@ -4,24 +4,26 @@
       "tipo": "realizada",
       "titulo": "Visita a las Cubiertas de la ETSI",
       "fecha": "2026-10-28",
+      "lugar": "Cubiertas de la ETSI",
       "descripcion": "",
       "foto": "/images/novedades/whatsapp-image-2026-10-28-at-15.59.09.jpeg",
       "inscripcion": "",
       "fotos": [
-        "/images/novedades/whatsapp-image-2026-10-28-at-10.59.35.jpeg",
-        "/images/novedades/whatsapp-image-2026-10-28-at-10.35.30.jpeg"
+        { "imagen": "/images/novedades/whatsapp-image-2026-10-28-at-10.59.35.jpeg" },
+        { "imagen": "/images/novedades/whatsapp-image-2026-10-28-at-10.35.30.jpeg" }
       ]
     },
     {
       "tipo": "realizada",
       "titulo": "Excursión al INTA, en Mazagón",
       "fecha": "2026-11-06",
+      "lugar": "Instituto Nacional de Técnica Aeroespacial de «el Arenosillo», en Mazagón",
       "descripcion": "¡Visita al INTA! El viernes 6 de noviembre GEENIUS visitó el Instituto Nacional de Técnica Aeroespacial de \"el Arenosillo\", en Mazagón, donde conocimos sus SMART GRIDS basadas en Hidrógeno ⚛️⚡, pilas de combustible y sus instalaciones. \n",
       "foto": "/images/novedades/whatsapp-image-2026-11-08-at-11.44.25.jpeg",
       "inscripcion": "",
       "fotos": [
-        "/images/novedades/whatsapp-image-2026-11-08-at-11.43.05.jpeg",
-        "/images/novedades/whatsapp-image-2026-11-08-at-11.43.04.jpeg"
+        { "imagen": "/images/novedades/whatsapp-image-2026-11-08-at-11.43.05.jpeg" },
+        { "imagen": "/images/novedades/whatsapp-image-2026-11-08-at-11.43.04.jpeg" }
       ]
     },
     {
@@ -45,6 +47,7 @@
       "foto": "/images/novedades/whatsapp-image-2026-11-18-at-19.45.11.jpeg",
       "inscripcion": "https://forms.cloud.microsoft/e/FnSx5yV6PP",
       "fecha": "2026-11-26",
+      "lugar": "Salón de actos de la ETSI",
       "descripcion": "Analizamos el presente y los desafíos del hidrógeno en la transición energética con una mesa redonda de primer nivel en la ETSI. Contaremos con seis profesionales referentes que abarcan toda la cadena de valor —desde la investigación y la ingeniería hasta la gran industria y la representación institucional— procedentes de la Asociación Española del Hidrógeno, H2B2, Moeve, INTA / SAILH2, INERCO y Grupo Cox.\n\nTendrá lugar en el SALÓN DE ACTOS DE LA ETSI, a las 10:00 a.m\n\nUna oportunidad única para escuchar de primera mano a quienes lideran el sector en España. ¡Reserva tu plaza rellenando el formulario de inscripción! "
     }
   ]

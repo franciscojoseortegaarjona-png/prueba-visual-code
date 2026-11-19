@@ -18,7 +18,9 @@ La OAuth App utiliza el permiso `public_repo` para escribir en el repositorio p�
 
 ## Publicar novedades
 
-En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo y texto. Para adjuntar varias fotos, usa el campo **Fotografías**: sube una y pulsa **Add fotografía** para agregar las demás. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`; la web se actualiza cuando termina el despliegue de GitHub Pages.
+En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo y texto; completa lugar, objetivos, aprendizajes y experiencia solo cuando haya información disponible. Para adjuntar varias fotos, usa el campo **Fotografías** y agrega un texto alternativo descriptivo si es posible. También puedes definir el texto alternativo de la fotografía principal. Las galerías aceptan una foto principal y tantas adicionales como necesite la actividad; con una sola foto no se muestran controles vacíos. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`. El CMS mantiene el flujo actual: guarda los cambios en `main` y GitHub Pages publica al terminar el despliegue.
+
+Las áreas se actualizan en `data/areas.json`: edita su texto o añade rutas a imágenes reales dentro de `imagenes`, con un `alt` para cada una. La formación práctica conserva la foto disponible; las otras áreas muestran su icono hasta que se agreguen fotografías.
 # Gestor de Novedades GEENIUS
 
 El panel de edición estará en `https://asociaciongeenius.es/admin/`. Permite iniciar sesión con GitHub, editar las actividades y subir fotografías. Al guardar, Decap CMS crea un commit en este repositorio y GitHub Pages publica los cambios automáticamente.
@@ -41,4 +43,6 @@ La OAuth App se configura con permiso `public_repo` para escribir en repositorio
 
 ## Publicar novedades
 
-En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo y texto. Para adjuntar varias fotos, usa el campo **Fotografías**: sube una y pulsa **Add fotografía** para agregar las demás. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`; la web se actualiza cuando termina el despliegue de GitHub Pages.
+En el panel, abre **Actividades → Novedades**. Añade el título, fecha, tipo y texto; completa lugar, objetivos, aprendizajes y experiencia solo cuando haya información disponible. Para adjuntar varias fotos, usa el campo **Fotografías** y agrega un texto alternativo descriptivo si es posible. También puedes definir el texto alternativo de la fotografía principal. Las galerías aceptan una foto principal y tantas adicionales como necesite la actividad; con una sola foto no se muestran controles vacíos. Guarda la entrada para publicarla. Las fotos quedan en `images/novedades/` y el contenido en `data/novedades.json`. El CMS mantiene el flujo actual: guarda los cambios en `main` y GitHub Pages publica al terminar el despliegue.
+
+Las áreas se actualizan en `data/areas.json`: edita su texto o añade rutas a imágenes reales dentro de `imagenes`, con un `alt` para cada una. La formación práctica conserva la foto disponible; las otras áreas muestran su icono hasta que se agreguen fotografías.
